@@ -1,3 +1,45 @@
-<h1>
-  {{title}}
-</h1>
+<div class="header">
+  <div class="return" *ngIf="showCar">
+    <a href="#" (click)="hideCarList()"> Return To List</a>
+  </div>
+  <div class="user-options">
+    <a href="#" (click)="showCarList()"> view car  {{totalCount()}} items</a>
+    <br>
+  </div>
+</div>
+<section class="products" *ngIf="items.length && !showCar">
+  <div class="product-card" *ngFor="let item of items">
+    <div class="product-image">
+      <img src="{{item.image}}">
+    </div>
+    <div class="product-info">
+      <h5>{{item.title}}</h5>
+      <h6>{{item.price | currency:'USD':true:'1.2-2'}}</h6>
+      <button class="car-button" (click)="addToCar(item)">add to car</button>
+    </div>
+  </div>
+</section>
+<section class="car-list">
+  <h1 *ngIf="itemsCar.length == 0 && showCar">not items currently on your car</h1>
+  <table *ngIf="itemsCar.length && showCar">
+    <tr>
+      <th>Product</th>
+      <th>image</th>
+      <th>Price</th>
+      <th>Quntity</th>
+      <th>Total</th>
+      <th>Actions</th>
+    </tr>
+    <tr *ngFor="let item of itemsCar">
+      <th>{{item.title}}</th>
+      <th> <img src="{{item.image}}"></th>
+      <th>{{item.price | currency:'USD':true:'1.2-2'}}</th>
+      <td><input type="number" [(ngModel)]="item.quantity" class="quantity-input"></td>
+      <td>{{(item.price * item.quantity) | currency:'USD':true:'1.2-2' }}</td>
+      <th><a href="#" (click)="deleteItemFromCar(item)" class="delete-link">Delete</a></th>
+    </tr>
+  </table>
+</section>
+<div class="footer">
+  <h3 class="text-center">item list developed by Alvaro Montes 2017</h3>
+</div>

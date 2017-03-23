@@ -26,3 +26,8 @@ Before running the tests make sure you are serving the app via `ng serve`.
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+#General
+
+I decided to use Angular CLI due that it covers most of the requirements, for now it does not have unit test done for me, 
+but it contains the Angular CLI auto generate.
