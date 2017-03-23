@@ -33,8 +33,6 @@ export class AppComponent {
       err => {
         console.log(err);
       });;
-
-    console.log(this.items);
   }
 
   private totalCount() {

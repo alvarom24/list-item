@@ -10,7 +10,7 @@ export class ItemDataService {
   private appCarToken: string = 'ITEM-LIST';
 
   getAllItems() {
-    return this.http.get('../src/data/items.json').map(response => response.json());
+    return this.http.get('/assets/items.json').map(response => response.json());
   }
 
   getItemById(id: number): Observable<Item> {
