@@ -31,3 +31,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 I decided to use Angular CLI due that it covers most of the requirements, for now it does not have unit test done for me, 
 but it contains the Angular CLI auto generate.
+
+In general de application shows a list of items and allows user to add the items to the car, in the right superior corner you can see a link to see the car 
+which shows the list of the items added to the user car you can change the quantity and values will change, once you are on car list you can return to 
+item list with the left corner link that only appears when you are locate on car view.
